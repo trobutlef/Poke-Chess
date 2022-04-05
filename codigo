@@ -1,0 +1,35 @@
+''' #generar todos los movimientos
+        moves = self.todos_mov()
+        # para cada movi, hacer el movimiento
+
+        for i in range(len(moves)-1, -1, -1):
+            self.movimiento_nuevo(moves[i])
+        # generar todos los posibles movimientos
+        # para cada movi enemigo, ver si esta en ataque
+            self.Turno_Agua = not self.Turno_Agua
+            if self.Check():
+                moves.remove(moves[i])# si ellos hacen un ataque al rey, no es un mov_validos()
+            self.Turno_Agua = not self.Turno_Agua
+            self.Regresar()
+        if len(moves) ==0:
+            if self.Check():
+                self.checkMate=True
+        else:
+            self.checkMate=False
+
+        return moves
+
+        #'''
+    '''def Check(self):
+        if self.Turno_Agua:
+            return self.atacado(self.posicion_gyarados[0],self.posicion_gyarados[1])
+        else:
+            return self.atacado(self.posicion_charizard[0], self.posicion_charizard[1])
+    def atacado(self,f, c):
+        self.Turno = not self.Turno_Agua #cambiamos el turno
+        enemigo_move= self.todos_mov()
+        self.Turno = not self.Turno_Agua
+        for movi in enemigo_move:
+            if movi.eFila == f and movi.eCol == c:
+                return True
+        return False'''
