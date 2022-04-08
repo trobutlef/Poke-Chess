@@ -1,2 +1,2 @@
 # Poke-Chess
-Just a simple chess game but with pokemons
+Just a simple chess game but with pokemon
