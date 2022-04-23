@@ -1,6 +1,5 @@
 '''
 @author:Tony Astuhuamán
-@author:Jorge Ata
 '''
 
 import pygame
@@ -16,7 +15,7 @@ dimensiones = [720, 720]
 
 ancho = int(dimensiones[0] / 8)
 alto = int(dimensiones[1] / 8)
-pygame.mixer_music.load("LowTide.mp3")
+pygame.mixer_music.load("./LowTide.mp3")
 pygame.mixer_music.play(-1)
 pygame.mixer.music.set_volume(0.01)
 
@@ -31,10 +30,11 @@ def imag():
     piezas=["aR_gyarados", "ar_milotic-reina", "aC_seadra-caballo", "aA_empoleon-alfil", "aT_kyogre-torre", "a_magikarp", "f_charmander", "fr_reshiram-reina", "fC_rapidash-caballo", "fA_infernape-alfil", "fT_groudon-torre","fR_charizard"]
 
     for pieza in piezas:  #iteremos por cada nombre de la pieza para meterlo a nuestra lista imagenes y asi no consumimos tantas lineas
-        Imagenes[pieza] = pygame.transform.scale(pygame.image.load("pokemones/"+pieza +".png"),(ancho,alto)) #ERROR
+        Imagenes[pieza] = pygame.transform.scale(pygame.image.load("./pokemones/"+pieza +".png"),(ancho,alto)) #ERROR
 
 def set_difficulty(value, difficulty):
-    print('Set difficulty to {} ({})'.format(difficulty[0], value)
+    pass
+    #print('Set difficulty to {} ({})'.format(difficulty[0], value)
 
 def main():
 
@@ -47,7 +47,7 @@ def main():
 
     # Titulo e iconos
     pygame.display.set_caption("Poke-Chess")
-    icono = pygame.image.load("chess.png")
+    icono = pygame.image.load("./chess.png")
     pygame.display.set_icon(icono)
 
     reloj = pygame.time.Clock()
@@ -138,10 +138,10 @@ def piezas(pantalla, tabla):
             if pieza != "**":
                 pantalla.blit(Imagenes[pieza], pygame.Rect( columna *ancho, fila*alto,ancho, alto))
 
-menu = pygame_menu.Menu(300, 400, 'Poke-Chess',theme=pygame_menu.themes.THEME_SOLARIZED)
+menu = pygame_menu.Menu('Poke-Chess', 300, 400 ,theme=pygame_menu.themes.THEME_SOLARIZED)
 
 
-#menu.add_selector('Jugador :', [('Agua', 1), ('Fuego', 2)], onchange=set_difficulty)
+menu.add.selector('Jugador :', [('Agua', 1), ('Fuego', 2)], onchange=set_difficulty)
 menu.add.button('Play', main)
 menu.add.button('Quit', pygame_menu.events.EXIT)
 menu.mainloop(surface)

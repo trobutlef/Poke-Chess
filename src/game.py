@@ -1,6 +1,5 @@
 '''
 @author:Tony Astuhuamán
-@author:Jorge Ata
 '''
 '''
 Tendra toda la informacion del juego(jugabilidad)
